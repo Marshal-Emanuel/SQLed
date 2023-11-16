@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    /* General styling */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+h3{
+
+    padding-top: 20px;
+}
+
+h3, h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* Form elements */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+form{
+    align-items: center;
+    padding-left: 30%;
+    padding-right: 30%;
+    border: 1px solid black;
+    border-radius:5px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}        
+
+    </style>
+</head>
+<body>
+    <!-- SELECT -->
+<h3>SELECT QUERY</h3>
+<h4>Command: SELECT [Element] FROM [TableName];</h4>
+<form action="select.php" method="post">
+    <label>SELECT</label>
+    <input type="text" name="txtField" placeholder="field">
+    <label>FROM</label>
+    <input type="text" name="txtTable" placeholder="table name">
+    <button type="submit">SELECT</button>
+</form>
+
+
+    <!--INSERT-->
+    <h3>INSERT QUERY</h3>
+    <h4>Command: INSERT INTO [Table name] [column1, column2] VALUES [value1, value2]; </h4>
+        <form action="process_insert.php" method="post">
+        <label>INSERT INTO</label>
+        <input type="text" name="txtTable" placeholder="table name" required>
+
+        <label>VALUES</label>
+        <input type="text" name="txtValues" placeholder="value12, ..." required>
+
+        <button type="submit">Execute INSERT</button>
+    </form>
+
+
+    <!-- Create Database -->
+<h3>CREATE DATABASE</h3>
+<h4>Command: CREATE DATABASE [DatabaseName];</h4>
+<form action="create_database.php" method="post">
+    <label for="txtDatabaseName">Database Name:</label>
+    <input type="text" id="txtDatabaseName" name="txtDatabaseName" placeholder="Enter database name" required>
+    <button type="submit">Execute</button>
+</form>
+
+<!--Drop Database -->
+<h3>DROP DATABASE</h3>
+<h4>Command: DROP DATABASE [DatabaseName];</h4>
+<form action="drop_database.php" method="post">
+    <label for="txtDatabaseNameDrop">Database Name:</label>
+    <input type="text" id="txtDatabaseNameDrop" name="txtDatabaseNameDrop" placeholder="Enter database name" required> Proceed with caution! 
+    <button type="submit">Execute</button>
+</form>
+
+<!-- Create Table -->
+<h3>CREATE TABLE</h3>
+<h4>Command: CREATE TABLE [TableName] ([Column1 DataType1, Column2 DataType2, ...]);</h4>
+<form action="create_table.php" method="post">
+    <label for="txtTableNameCreate">Table Name:</label>
+    <input type="text" id="txtTableNameCreate" name="txtTableNameCreate" placeholder="Enter table name" required>
+
+    <label for="txtColumn1Name">Column 1 Name:</label>
+    <input type="text" id="txtColumn1Name" name="txtColumn1Name" placeholder="Enter column 1 name" required>
+
+    <label for="ddlColumn1Type">Column 1 Data Type:</label>
+    <select id="ddlColumn1Type" name="ddlColumn1Type" required>
+        <option value="INT">INT</option>
+        <option value="VARCHAR(255)">VARCHAR(255)</option>
+        
+    </select>
+
+    <label for="txtColumn2Name">Column 2 Name:</label>
+    <input type="text" id="txtColumn2Name" name="txtColumn2Name" placeholder="Enter column 2 name" required>
+
+    <label for="ddlColumn2Type">Column 2 Data Type:</label>
+    <select id="ddlColumn2Type" name="ddlColumn2Type" required>
+        <option value="INT">INT</option>
+        <option value="VARCHAR(255)">VARCHAR(255)</option>
+       
+    </select>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!--Drop Table -->
+<h3>DROP TABLE</h3>
+<h4>Command: DROP TABLE [TableName];</h4>
+<form action="drop_table.php" method="post">
+    <label for="txtTableNameDrop">Table Name:</label>
+    <input type="text" id="txtTableNameDrop" name="txtTableNameDrop" placeholder="Enter table name" required>
+    <button type="submit">Execute</button>
+</form>
+
+<!-- Insert -->
+<h3>INSERT</h3>
+<h4>Command: INSERT INTO [TableName] VALUES ([Value1], [Value2]);</h4>
+<form action="insert.php" method="post">
+    <label for="txtTableNameInsert">Table Name:</label>
+    <input type="text" id="txtTableNameInsert" name="txtTableNameInsert" placeholder="Enter table name" required>
+
+    <label for="txtValue1Insert">Value 1:</label>
+    <input type="text" id="txtValue1Insert" name="txtValue1Insert" placeholder="Enter value 1" required>
+
+    <label for="txtValue2Insert">Value 2:</label>
+    <input type="text" id="txtValue2Insert" name="txtValue2Insert" placeholder="Enter value 2" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+
+
+<!-- Select -->
+<h3>SELECT WHERE: </h3>
+<h4>Command: SELECT [Columns] FROM [TableName] WHERE [Column] [Condition] [Value];</h4>
+<form action="select2.php" method="post">
+    <label for="txtTableNameSelect">Table Name:</label>
+    <input type="text" id="txtTableNameSelect" name="txtTableNameSelect" placeholder="Enter table name" required>
+
+    <label for="txtColumnsSelect">Columns:</label>
+    <input type="text" id="txtColumnsSelect" name="txtColumnsSelect" placeholder="Enter columns" required>
+
+    <label for="txtConditionColumn">Column Name:</label>
+    <input type="text" id="txtConditionColumn" name="txtConditionColumn" placeholder="Enter column name for condition" required>
+
+    <label for="txtCondition">Condition:</label>
+    <select id="txtCondition" name="txtCondition">
+        <option value="=">Equal to (=)</option>
+        <option value="!=">Not equal to (!=)</option>
+        <option value="<">Less than (<)</option>
+        <option value=">">Greater than (>)</option>
+        <!-- Add more condition options as needed -->
+    </select>
+
+    <label for="txtConditionValue">Condition Value:</label>
+    <input type="text" id="txtConditionValue" name="txtConditionValue" placeholder="Enter condition value" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+<!-- Update Form -->
+<h3>UPDATE</h3>
+<h4>Command: UPDATE [TableName] SET [ColumnName] = '[NewValue]' WHERE [ConditionColumn] = '[ConditionValue]';</h4>
+<form action="update.php" method="post">
+    <label for="txtTableNameUpdate">Table Name:</label>
+    <input type="text" id="txtTableNameUpdate" name="txtTableNameUpdate" placeholder="Enter table name" required>
+
+    <label for="txtColumnName">Column Name:</label>
+    <input type="text" id="txtColumnName" name="txtColumnName" placeholder="Enter column name to update" required>
+
+    <label for="txtNewValue">New Value:</label>
+    <input type="text" id="txtNewValue" name="txtNewValue" placeholder="Enter new value" required>
+
+    <label for="txtConditionColumn">Condition Column:</label>
+    <input type="text" id="txtConditionColumn" name="txtConditionColumn" placeholder="Enter condition column" required>
+
+    <label for="txtConditionValue">Condition Value:</label>
+    <input type="text" id="txtConditionValue" name="txtConditionValue" placeholder="Enter condition value" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- Delete -->
+<h3>DELETE</h3>
+<h4>Command: DELETE FROM [TableName] WHERE [ConditionColumn] = '[ConditionValue]';</h4>
+<form action="delete.php" method="post">
+    <label for="txtTableNameDelete">Table Name:</label>
+    <input type="text" id="txtTableNameDelete" name="txtTableNameDelete" placeholder="Enter table name" required>
+
+    <label for="txtConditionColumn">Condition Column:</label>
+    <input type="text" id="txtConditionColumn" name="txtConditionColumn" placeholder="Enter condition column" required>
+
+    <label for="txtConditionValue">Condition Value:</label>
+    <input type="text" id="txtConditionValue" name="txtConditionValue" placeholder="Enter condition value" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+
+<!-- Like Clause -->
+<h3>LOOK LIKE CALUSE</h3>
+<h4>Command: SELECT * FROM [TableName] WHERE [ColumnName] LIKE [Pattern];</h4>
+<form action="process_like_clause.php" method="post">
+    <label for="txtTableNameLike">Table Name:</label>
+    <input type="text" id="txtTableNameLike" name="txtTableNameLike" placeholder="Enter table name" required>
+
+    <label for="txtColumnNameLike">Column Name:</label>
+    <input type="text" id="txtColumnNameLike" name="txtColumnNameLike" placeholder="Enter column name" required>
+
+    <label for="txtPatternLike">Pattern:</label>
+    <input type="text" id="txtPatternLike" name="txtPatternLike" placeholder="Enter pattern" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- Top Clause -->
+<h3>TOP CLAUSE</h3>
+<h4>Command: SELECT TOP [Limit] * FROM [TableName];</h4>
+<form action="process_top_clause.php" method="post">
+    <label for="txtTableNameTop">Table Name:</label>
+    <input type="text" id="txtTableNameTop" name="txtTableNameTop" placeholder="Enter table name" required>
+
+    <label for="txtLimitTop">Number of Rows:</label>
+    <input type="text" id="txtLimitTop" name="txtLimitTop" placeholder="Enter number of rows" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- Order By -->
+<h3>ORDER BY</h3>
+<h4>Command: SELECT * FROM [TableName] ORDER BY [Columns] [Order];</h4>
+<form action="order_by.php" method="post">
+    <label for="txtTableNameOrderBy">Table Name:</label>
+    <input type="text" id="txtTableNameOrderBy" name="txtTableNameOrderBy" placeholder="Enter table name" required>
+
+    <label for="txtColumnsOrderBy">Columns:</label>
+    <input type="text" id="txtColumnsOrderBy" name="txtColumnsOrderBy" placeholder="Enter columns" required>
+
+    <label for="txtOrderOrderBy">Order (ASC or DESC):</label>
+    <input type="text" id="txtOrderOrderBy" name="txtOrderOrderBy" placeholder="Enter order" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!--  Group By -->
+<h3>GROUP BY</h3>
+<h4>Command: SELECT COUNT([Column]), [GroupByColumn] FROM [TableName] GROUP BY [GroupByColumn];</h4>
+<form action="group_by.php" method="post">
+    <label for="txtTableNameGroupBy">Table Name:</label>
+    <input type="text" id="txtTableNameGroupBy" name="txtTableNameGroupBy" placeholder="Enter table name" required>
+
+    <label for="txtGroupByColumn">Group By Column:</label>
+    <input type="text" id="txtGroupByColumn" name="txtGroupByColumn" placeholder="Enter Group By column" required>
+
+    <label for="txtCountColumn">Count Column:</label>
+    <input type="text" id="txtCountColumn" name="txtCountColumn" placeholder="Enter Count column" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!--Distinct -->
+<h3>DISTINCT</h3>
+<h4>Command: SELECT DISTINCT [Column] FROM [TableName];</h4>
+<form action="distinct.php" method="post">
+    <label for="txtTableNameDistinct">Table Name:</label>
+    <input type="text" id="txtTableNameDistinct" name="txtTableNameDistinct" placeholder="Enter table name" required>
+
+    <label for="txtColumnDistinct">Column Name:</label>
+    <input type="text" id="txtColumnDistinct" name="txtColumnDistinct" placeholder="Enter column name" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+<!-- Continue the pattern for the remaining commands -->
+
+<!--Sorting -->
+<h3>SORTING</h3>
+<h4>Command: SELECT * FROM [TableName] ORDER BY [Column] [Order];</h4>
+<form action="sorting.php" method="post">
+    <label for="txtTableNameSorting">Table Name:</label>
+    <input type="text" id="txtTableNameSorting" name="txtTableNameSorting" placeholder="Enter table name" required>
+
+    <label for="txtColumnSorting">Column Name:</label>
+    <input type="text" id="txtColumnSorting" name="txtColumnSorting" placeholder="Enter column name" required>
+
+    <label for="txtOrderSorting">Order (ASC or DESC):</label>
+    <input type="text" id="txtOrderSorting" name="txtOrderSorting" placeholder="Enter order" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- Default Constraints -->
+<h3>DEFAULT CONSTRAINT</h3>
+<h4>Command: ALTER TABLE [TableName] ALTER COLUMN [ColumnName] SET DEFAULT [DefaultValue];</h4>
+<form action="default_constraints.php" method="post">
+    <label for="txtTableNameDefault">Table Name:</label>
+    <input type="text" id="txtTableNameDefault" name="txtTableNameDefault" placeholder="Enter table name" required>
+
+    <label for="txtColumnDefault">Column Name:</label>
+    <input type="text" id="txtColumnDefault" name="txtColumnDefault" placeholder="Enter column name" required>
+
+    <label for="txtDefaultDefault">Default Value:</label>
+    <input type="text" id="txtDefaultDefault" name="txtDefaultDefault" placeholder="Enter default value" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!--Unique -->
+<h3>UNIQUE</h3>
+<h4>Command: ALTER TABLE [TableName] ADD CONSTRAINT [ConstraintName] UNIQUE ([ColumnName]);</h4>
+<form action="unique.php" method="post">
+    <label for="txtTableNameUnique">Table Name:</label>
+    <input type="text" id="txtTableNameUnique" name="txtTableNameUnique" placeholder="Enter table name" required>
+
+    <label for="txtColumnUnique">Column Name:</label>
+    <input type="text" id="txtColumnUnique" name="txtColumnUnique" placeholder="Enter column name" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- Joins -->
+<h3>JOINS</h3>
+<h4>Command: SELECT * FROM [Table1] INNER JOIN [Table2] ON [Condition];</h4>
+<form action="process_joins.php" method="post">
+    <label for="txtTable1Join">Table 1:</label>
+    <input type="text" id="txtTable1Join" name="txtTable1Join" placeholder="Enter table name" required>
+
+    <label for="txtTable2Join">Table 2:</label>
+    <input type="text" id="txtTable2Join" name="txtTable2Join" placeholder="Enter table name" required>
+
+    <label for="txtConditionJoin">Join Condition:  example table1.column1 = table2.column2
+    </label>
+    <input type="text" id="txtConditionJoin" name="txtConditionJoin" placeholder="Enter join condition" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!--Unions -->
+<h3>UNIONS</h3>
+<h4>Command: SELECT * FROM [Table1] UNION SELECT * FROM [Table2];</h4>
+<form action="process_unions.php" method="post">
+    <label for="txtTable1Union">Table 1:</label>
+    <input type="text" id="txtTable1Union" name="txtTable1Union" placeholder="Enter table name" required>
+
+    <label for="txtTable2Union">Table 2:</label>
+    <input type="text" id="txtTable2Union" name="txtTable2Union" placeholder="Enter table name" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- Alter -->
+<h3>ALTER</h3>
+<h4>Command: ALTER TABLE [TableName] ADD [ColumnName] [DataType];</h4>
+<form action="alter.php" method="post">
+    <label for="txtTableNameAlter">Table Name:</label>
+    <input type="text" id="txtTableNameAlter" name="txtTableNameAlter" placeholder="Enter table name" required>
+
+    <label for="txtColumnName">Column Name:</label>
+    <input type="text" id="txtColumnName" name="txtColumnName" placeholder="Enter column name" required>
+
+    <label for="txtDataType">Data Type:</label>
+    <input type="text" id="txtDataType" name="txtDataType" placeholder="Enter data type" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+
+<!-- Where Clause -->
+<h3>WHERE CLAUSE</h3>
+<h4>Command: SELECT * FROM [TableName] WHERE [Condition];</h4>
+<form action="where_clause.php" method="post">
+    <label for="txtTableNameWhere">Table Name:</label>
+    <input type="text" id="txtTableNameWhere" name="txtTableNameWhere" placeholder="Enter table name" required>
+
+    <label for="txtConditionWhere">Condition:</label>
+    <input type="text" id="txtConditionWhere" name="txtConditionWhere" placeholder="Enter condition" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- AND Clause -->
+<h3>AND CLAUSE</h3>
+<h4>Command: SELECT * FROM [TableName] WHERE [Condition1] AND [Condition2];</h4>
+<form action="and_clause.php" method="post">
+    <label for="txtTableNameAnd">Table Name:</label>
+    <input type="text" id="txtTableNameAnd" name="txtTableNameAnd" placeholder="Enter table name" required>
+
+    <label for="txtCondition1And">Condition 1:</label>
+    <input type="text" id="txtCondition1And" name="txtCondition1And" placeholder="Enter condition 1" required>
+
+    <label for="txtCondition2And">Condition 2:</label>
+    <input type="text" id="txtCondition2And" name="txtCondition2And" placeholder="Enter condition 2" required>
+
+    <button type="submit">Execute</button>
+</form>
+
+
+<!-- Or Clause -->
+<h3>OR CLAUSE</h3>
+<h4>Command: SELECT * FROM [TableName] WHERE [Condition1] OR [Condition2];</h4>
+<form action="or_clause.php" method="post">
+    <label for="txtTableNameOr">Table Name:</label>
+    <input type="text" id="txtTableNameOr" name="txtTableNameOr" placeholder="Enter table name" required>
+
+    <label for="txtCondition1Or">Condition 1:</label>
+    <input type="text" id="txtCondition1Or" name="txtCondition1Or" placeholder="Enter condition 1" required>
+
+    <label for="txtCondition2Or">Condition 2:</label>
+    <input type="text" id="txtCondition2Or" name="txtCondition2Or" placeholder="Enter condition 2" required>
+
+    <button type="submit">Execute</button>
+</form>
