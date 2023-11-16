@@ -17,7 +17,7 @@ $tableNameDelete = $_POST['txtTableNameDelete'];
 $conditionColumn = $_POST['txtConditionColumn'];
 $conditionValue = $_POST['txtConditionValue'];
 
-// Sanitize user inputs to prevent SQL injection
+// Prevent SQL injection
 $tableNameDelete = mysqli_real_escape_string($conn, $tableNameDelete);
 $conditionColumn = mysqli_real_escape_string($conn, $conditionColumn);
 $conditionValue = mysqli_real_escape_string($conn, $conditionValue);
