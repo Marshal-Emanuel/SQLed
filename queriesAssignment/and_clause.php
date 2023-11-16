@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Form data
+// Form data recieved
 $tableName = $_POST['txtTableNameAnd'];
 $condition1 = $_POST['txtCondition1And'];
 $condition2 = $_POST['txtCondition2And'];
