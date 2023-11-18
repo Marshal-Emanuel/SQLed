@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get user input from the form
+// Get user input from the form 
 $tableName = $_POST['txtTableNameCreate'];
 $column1Name = $_POST['txtColumn1Name'];
 $column1Type = $_POST['ddlColumn1Type'];
