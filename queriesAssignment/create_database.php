@@ -1,5 +1,5 @@
 <?php
-// Replace [YOUR_DB_USERNAME] and [YOUR_DB_PASSWORD] with your actual database credentials
+
 $servername = "localhost";
 $username = "root";
 $password = "sudoAdmin123.";
