@@ -19,7 +19,7 @@ $column1Type = $_POST['ddlColumn1Type'];
 $column2Name = $_POST['txtColumn2Name'];
 $column2Type = $_POST['ddlColumn2Type'];
 
-// Construct the CREATE TABLE query
+// Construct the CREATE TABLE query 
 $sql = "CREATE TABLE $tableName ($column1Name $column1Type, $column2Name $column2Type)";
 
 // Execute the query
