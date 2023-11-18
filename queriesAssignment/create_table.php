@@ -23,7 +23,7 @@ $column2Type = $_POST['ddlColumn2Type'];
 $sql = "CREATE TABLE $tableName ($column1Name $column1Type, $column2Name $column2Type)";
 
 // Execute the query
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === TRUE) { 
     echo "Table created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
