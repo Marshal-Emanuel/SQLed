@@ -4,7 +4,7 @@ $username = "root";
 $password = "sudoAdmin123.";
 $dbname = "supermarket_management"; 
 
-// Create connection 
+// Create connection  
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
