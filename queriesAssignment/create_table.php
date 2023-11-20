@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "sudoAdmin123.";
-$dbname = "supermarket_management";
+$dbname = "supermarket_management"; 
 
 // Create connection 
 $conn = new mysqli($servername, $username, $password, $dbname);
