@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "localhost"; 
 $username = "root";
 $password = "sudoAdmin123.";
 $dbname = "supermarket_management"; 
