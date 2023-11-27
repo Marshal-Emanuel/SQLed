@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";  
 $username = "root";  
-$password = "sudoAdmin123.";
+$password = "sudoAdmin123."; 
 $dbname = "supermarket_management"; 
 
 // Create connection
