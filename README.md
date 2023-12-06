@@ -17,10 +17,15 @@ Each HTML form corresponds to a specific functionality, and the form submissions
 │ ├── order_by.php
 
 │ ├── process_insert.php
+
 │ └── ...
+
 │
+
 └── sql
+
 ├── supermarket_management.sql
+
 └── ...
 
 
