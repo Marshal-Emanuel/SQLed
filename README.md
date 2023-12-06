@@ -7,10 +7,15 @@ Each HTML form corresponds to a specific functionality, and the form submissions
 ## Project Structure
 /ProjectRoot
 │
+
 ├── form.html
+
 ├── php
+
 │ ├── alter.php
+
 │ ├── order_by.php
+
 │ ├── process_insert.php
 │ └── ...
 │
