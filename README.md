@@ -40,7 +40,7 @@ Each HTML form corresponds to a specific functionality, and the form submissions
    - Execute the SQL scripts  set up the necessary database tables and configurations.
 
 2. **Configure Database Connection:**
-   - Open each PHP file in the `php/` directory and update the database connection details (e.g., hostname, username, password) as needed.
+   - Open each PHP file and update the database connection details (e.g., hostname, username, password) as needed.
 
 3. **Web Server Configuration:**
    - Deploy the project on a web server. Ensure that the web server is configured to execute PHP files eg, localhost server(Apache).
