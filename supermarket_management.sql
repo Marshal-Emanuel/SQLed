@@ -2,7 +2,7 @@
 -- version 5.2.1deb1ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
+-- Host: localhost:3306 
 -- Generation Time: Nov 14, 2023 at 07:48 PM
 -- Server version: 8.0.35-0ubuntu0.23.10.1
 -- PHP Version: 8.2.10-2ubuntu1
