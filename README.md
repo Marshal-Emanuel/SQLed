@@ -4,7 +4,7 @@ SQLedP
 Welcome to Project Name! This web application utilizes HTML forms to interact with a backend powered by PHP scripts. 
 Each HTML form corresponds to a specific functionality, and the form submissions trigger corresponding PHP files, which execute SQL commands on a database.
 
-## Project Structure  
+## Project Structure   
 /ProjectRoot
 │  
 
